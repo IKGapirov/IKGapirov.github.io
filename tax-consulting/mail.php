@@ -28,7 +28,7 @@
 	$send = mail ($address,$sub,$mes,"Content-type:text/plain; charset = UTF-8\r\nFrom:$email");//собственно сам вызов функции отправки сообшения на сервере
 
 	if ($send) //проверяем, отправилось ли сообщение
-		echo "Сообщение отправлено успешно! Перейти на <a href='https://ikgapirov.github.io/tax-consulting/'>tax-consulting</a>, если вас не перенаправило вручную.";
+		echo "Сообщение отправлено успешно! Перейти на <a href='https://You-hands.ru/'>you-hands.ru</a>, если вас не перенаправило вручную.";
 	else 
 		echo "Ошибка, сообщение не отправлено! Возможно, проблемы на сервере";
 		 
