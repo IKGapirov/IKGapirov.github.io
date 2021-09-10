@@ -1,9 +1,7 @@
 ﻿<?php
 
 $to = 'IKGapirov@gmail.com'; // адрес получателя
-$subject = 'Заказ обратного звонка'; // тема письма
 $message = "Имя: {$_POST['name']}\r\n"; // добавляем имя в текст
-$message .= "Телефон: {$_POST['phone']}"; // добавляем телефон в текст
 $headers .= 'Content-type: text/plain; charset=utf-8' . "\r\n"; // установливаем кодировку
 $headers .= 'From: mail@site.com' . "\r\n"; // добавляем отправителя
  
