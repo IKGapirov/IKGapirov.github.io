@@ -13,10 +13,10 @@ function url(){
 
 if($_POST) {
 
-   $name = trim(stripslashes($_POST['last-name']));
-   $email = trim(stripslashes($_POST['mail']));
+   $first-name = trim(stripslashes($_POST['last-name']));
+   $mail = trim(stripslashes($_POST['mail']));
    $phone = trim(stripslashes($_POST['phone']));
-   $contact_message = trim(stripslashes($_POST['message']));
+   $message = trim(stripslashes($_POST['message']));
 
 
    
@@ -24,18 +24,18 @@ if($_POST) {
 
    // Set Message
    $message .= "Email from: " . $name . "<br />";
-	 $message .= "Email address: " . $email . "<br />";
+	 $message .= "Email address: " . $mail . "<br />";
    $message .= "Phone: " . $phone . "<br />";
    $message .= "Message: <br />";
-   $message .= nl2br($contact_message);
+   $message .= nl2br($message);
    $message .= "<br /> ----- <br /> This email was sent from your site " . url() . " contact form. <br />";
 
    // Set From: header
-   $from =  $name . " <" . $email . ">";
+   $from =  $name . " <" . $mail . ">";
 
    // Email Headers
 	$headers = "From: " . $from . "\r\n";
-	$headers .= "Reply-To: ". $email . "\r\n";
+	$headers .= "Reply-To: ". $mail . "\r\n";
  	$headers .= "MIME-Version: 1.0\r\n";
 	$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
