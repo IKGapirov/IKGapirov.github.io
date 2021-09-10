@@ -1,19 +1,22 @@
-<?php 
-if(isset($_post['submit'])){
-    $to = "IKGapirov@gmail.com"; // this is your Email address
-    $from = $_post['email']; // this is the sender's Email address
-    $first_name = $_post['first_name'];
-    $last_name = $_post['last_name'];
-    $subject = "Form submission";
-    $subject2 = "Copy of your form submission";
-    $message = $first_name . " " . $last_name . " wrote the following:" . "\n\n" . $_post['message'];
-    $message2 = "Here is a copy of your message " . $first_name . "\n\n" . $_post['message'];
-
-    $headers = "From:" . $from;
-    $headers2 = "From:" . $to;
-    mail($to,$subject,$message,$headers);
-    mail($from,$subject2,$message2,$headers2); // sends a copy of the message to the sender
-    echo "Mail Sent. Thank you " . $first_name . ", we will contact you shortly.";
-    // You can also use header('Location: thank_you.php'); to redirect to another page.
-    }
+<?php
+if (isset($_POST['first-name'])) {$name = $_POST['first-name']; if ($name == '') {unset($name);}}
+if (isset($_POST['last-name'])) {$name = $_POST['last-name']; if ($name == '') {unset($name);}}
+if (isset($_POST['mail'])) {$mail = $_POST['mail']; if ($mail == '') {unset($mail);}}
+if (isset($_POST['phone'])) {$phone = $_POST['phone']; if ($phone == '') {unset($phone);}}
+if (isset($_POST['message'])) {$message = $_POST['message']; if ($message == '') {unset($message);}}
+ 
+if (isset($name) && isset($mail) && isset($phone) && isset($message)){
+ 
+$address = "IKGapirov@gmail.com";
+$mes = "Имя: $name \nE-mail: email \nТема: $phone \nТекст: $message";
+$send = mail ($address,$sub,$mes,"Content-type:text/plain; charset = UTF-8\r\nFrom:$mail");
+if ($send == 'true')
+{echo "Сообщение отправлено успешно. Перейдите на главную страницу блога <a href='https://bloggood.ru/'>BLOGGOOD.RU</a>,и вы сможете продолжить ваш просмотр";}
+else {echo "Ошибка, сообщение не отправлено!";}
+ 
+}
+else
+{
+echo "Заполнили все поля!!!";
+}
 ?>
