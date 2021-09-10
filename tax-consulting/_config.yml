@@ -13,8 +13,8 @@
 
 theme: jekyll-agency
 
-url    : "https://IKGapirov.github.io/tax-consulting/" # the base hostname & protocol for your site, e.g. http://example.com
-baseurl: "/" # the subpath of your site, e.g. /blog
+url    : "" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "" # the subpath of your site, e.g. /blog
 
 title      : Your Awesome Website
 email      : your-email@example.com #this is also the email contact forms will go to
