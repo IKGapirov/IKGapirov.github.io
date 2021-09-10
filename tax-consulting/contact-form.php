@@ -1,14 +1,15 @@
 ﻿<?php
 
-<div id="form_163442_1"></div>
-<script type="text/javascript">
-   (function (d, w, c) {
-       (w[c] = w[c] || []).push({formId:163442,host:"ikgapirov.github.io/tax-consulting",formHeight:100, el: "form_163442_1",center: 1,scroll: 0});
-       var s = d.createElement("script"), g = "getElementsByTagName";
-       s.type = "text/javascript"; s.charset="UTF-8"; s.async = true;
-       s.src = (d.location.protocol == "https:" ? "https:" : "http:")+"//ikgapirov.github.io/tax-consulting/js/iform.js?v=0.0.2";
-       var h=d[g]("head")[0] || d[g]("body")[0];
-       h.appendChild(s);
-   })(document, window, "fdforms");
-</script>
+$to = 'IKGapirov@gmail.com'; // адрес получателя
+$subject = 'Заказ обратного звонка'; // тема письма
+$message = "Имя: {$_POST['name']}\r\n"; // добавляем имя в текст
+$message .= "Телефон: {$_POST['phone']}"; // добавляем телефон в текст
+$headers .= 'Content-type: text/plain; charset=utf-8' . "\r\n"; // установливаем кодировку
+$headers .= 'From: mail@site.com' . "\r\n"; // добавляем отправителя
+ 
+if( mail($to, $subject, $message, $headers) ){
+ echo '<p style="color: green;">Ваше сообщение отправлено</p>';
+}else{
+ echo '<p style="color: red;">Ошибка!</p>';
+}
 ?>
