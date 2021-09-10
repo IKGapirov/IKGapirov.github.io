@@ -9,11 +9,11 @@ $message = htmlspecialchars($_POST["message"]);
 $bezspama = htmlspecialchars($_POST["bezspama"]);
 
 /* Ваш адрес и тема сообщения */
-$address = "pochta@kakoy-to-sajt.com";
-$sub = "Сообщение с сайта ХХХ";
+$address = "IKGapirov@gmail.com";
+$sub = "Сообщение с сайта Tax & Consulting";
 
 /* Формат письма */
-$mes = "Сообщение с сайта ХХХ.\n
+$mes = "Сообщение с сайта Tax & Consulting.\n
 Имя отправителя: $name 
 Электронный адрес отправителя: $email
 Телефон отправителя: $tel
