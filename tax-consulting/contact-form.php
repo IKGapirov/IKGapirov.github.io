@@ -1,41 +1,14 @@
 ﻿<?php
 
-/* Задаем переменные */
-$name = htmlspecialchars($_POST["name"]);
-$email = htmlspecialchars($_POST["email"]);
-$tel = htmlspecialchars($_POST["tel"]);
-$website = htmlspecialchars($_POST["website"]);
-$message = htmlspecialchars($_POST["message"]);
-$bezspama = htmlspecialchars($_POST["bezspama"]);
-
-/* Ваш адрес и тема сообщения */
-$address = "IKGapirov@gmail.com";
-$sub = "Сообщение с сайта Tax & Consulting";
-
-/* Формат письма */
-$mes = "Сообщение с сайта Tax & Consulting.\n
-Имя отправителя: $name 
-Электронный адрес отправителя: $email
-Телефон отправителя: $tel
-Сайт отправителя: $website
-Текст сообщения:
-$message";
-
-
-if (empty($bezspama)) /* Оценка поля bezspama - должно быть пустым*/
-{
-/* Отправляем сообщение, используя mail() функцию */
-$from = "Reply-To: $email \r\n";
-if (mail($address, $sub, $mes, $from)) {
-	header('Refresh: 5; URL=http://biznessystem.ru');
-	echo '<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
-    <body>Письмо отправлено, через 5 секунд вы вернетесь на страницу XXX</body>';}
-else {
-	header('Refresh: 5; URL=http://biznessystem.ru');
-	echo '<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
-    <body>Письмо не отправлено, через 5 секунд вы вернетесь на страницу YYY</body>';}
-}
-exit; /* Выход без сообщения, если поле bezspama чем-то заполнено */
+<div id="form_163442_1"></div>
+<script type="text/javascript">
+   (function (d, w, c) {
+       (w[c] = w[c] || []).push({formId:163442,host:"formdesigner.ru",formHeight:100, el: "form_163442_1",center: 1,scroll: 0});
+       var s = d.createElement("script"), g = "getElementsByTagName";
+       s.type = "text/javascript"; s.charset="UTF-8"; s.async = true;
+       s.src = (d.location.protocol == "https:" ? "https:" : "http:")+"//formdesigner.ru/js/iform.js?v=0.0.2";
+       var h=d[g]("head")[0] || d[g]("body")[0];
+       h.appendChild(s);
+   })(document, window, "fdforms");
+</script>
 ?>
