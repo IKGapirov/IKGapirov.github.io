@@ -1,12 +1,19 @@
- <?php
-$to = "IKGapirov@gmail.com"; // емайл получателя данных из формы
-$tema = "Send Us A Message"; // тема полученного емайла
-$message = "Tell us your name * ".$_POST['first-name']."<br>";//присвоить переменной значение, полученное из формы name=name
-$message = "Tell us your name * ".$_POST['last-name']."<br>";//присвоить переменной значение, полученное из формы name=name
-  $message .= "Enter your email * ".$_POST['email']."<br>"; //полученное из формы name=email
-$message .= "Enter phone number ".$_POST['phone']."<br>"; //полученное из формы name=phone
-$message .= "Message * ".$_POST['message']."<br>"; //полученное из формы name=message
-$headers  = 'MIME-Version: 1.0' . "\r\n"; // заголовок соответствует формату плюс символ перевода строки
-  $headers .= 'Content-type: text/html; charset=utf-8' . "\r\n"; // указывает на тип посылаемого контента
-mail($to, $tema, $message, $headers); //отправляет получателю на емайл значения переменных
+<?php 
+if(isset($_POST['submit'])){
+    $to = "IKGapirov@gmail.com"; // this is your Email address
+    $from = $_POST['email']; // this is the sender's Email address
+    $first_name = $_POST['first_name'];
+    $last_name = $_POST['last_name'];
+    $subject = "Form submission";
+    $subject2 = "Copy of your form submission";
+    $message = $first_name . " " . $last_name . " wrote the following:" . "\n\n" . $_POST['message'];
+    $message2 = "Here is a copy of your message " . $first_name . "\n\n" . $_POST['message'];
+
+    $headers = "From:" . $from;
+    $headers2 = "From:" . $to;
+    mail($to,$subject,$message,$headers);
+    mail($from,$subject2,$message2,$headers2); // sends a copy of the message to the sender
+    echo "Mail Sent. Thank you " . $first_name . ", we will contact you shortly.";
+    // You can also use header('Location: thank_you.php'); to redirect to another page.
+    }
 ?>
