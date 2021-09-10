@@ -9,7 +9,7 @@ $message = htmlspecialchars($_POST["message"]);
 $bezspama = htmlspecialchars($_POST["bezspama"]);
 
 /* Ваш адрес и тема сообщения */
-$address = "IKGapirov@gmail.com";
+$address = "pochta@kakoy-to-sajt.com";
 $sub = "Сообщение с сайта ХХХ";
 
 /* Формат письма */
